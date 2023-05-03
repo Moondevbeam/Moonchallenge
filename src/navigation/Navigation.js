@@ -1,11 +1,11 @@
 
 import React, {useState} from 'react';
 import One from '../pages/One';
-import Name from '../pages/Name';
 import Home from '../pages/Home';
 import Four from '../pages/Four';
 import Two from '../pages/Two';
 import Five from '../pages/Five';
+import Name from '../pages/Three';
 
 function Navigation() {
     const [currentPage, setCurrentPage] = useState('home');

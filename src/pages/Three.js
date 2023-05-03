@@ -102,30 +102,43 @@ function Name() {
  // Render the form and the generated pairs
   return (
     <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "20vh",
+    }}>
+   <div
     className='br4' style={{
       border: "1px solid white",
       padding: "10px",
       marginTop: "50px",
+      marginLeft: "200px",
+      marginRight: "200px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      width: "30%",
     }}>
+      <h1 className='code'>Name Pairs</h1>
+      <p className='code'>Write some names in the textbox, follow the instruction below and it will make randomized name pairs</p>
       <form onSubmit={handleSubmit}>
-        <label className='white'>
+        <label className='white code'>
           Enter names separated by commas:
           <input type="text" onChange={handleChange} />
         </label>
-        <button style={{marginLeft:10}} type="submit" class="btn btn-primary">Pair Names</button>
+        <button style={{marginLeft:10}} type="submit" className="btn btn-primary code">Pair Names</button>
       </form>
       {pairs.length > 0 &&
         <ul>
           {pairs.map((pair, index) => (
-            <li key={index}>
+            <li className='white code' key={index}>
               {pair.join(' and ')}
             </li>
           ))}
         </ul>
       }
+    </div>
     </div>
   );
 }

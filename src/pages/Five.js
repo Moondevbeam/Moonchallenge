@@ -57,15 +57,18 @@ function Five() {
 
  // Render contact list
   return (
-    <div className="five code">
+    <div className=" tc five code">
       <h1>Contact List</h1>
       <input
+      style={{width:"50%",
+    marginLeft:"200px"}}
         type="text"
         value={search}
         onChange={handleSearch}
         placeholder="Search by first name or last name..."
       />
       <label>
+        <div>
         <div className="pa3 white">
         <input
           type="checkbox"
@@ -74,9 +77,19 @@ function Five() {
         />
         Show favourites Only
         </div>
+        </div>
       </label>
       {displayContacts.map((contact, index) => (
-        <div key={contact.id || index} className="contact-card">
+        <div 
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",}}>
+        <div
+        style={{
+            width: "30%",}} 
+        key={contact.id || index} 
+        className="contact-card">
           <img
             src={contact.image}
             alt={`${contact.first_name} ${contact.last_name}`}
@@ -88,6 +101,7 @@ function Five() {
           <div className="favorite" onClick={() => toggleFavorite(contact)}>
             <p>{contact.favorite ? "★" : "☆"}</p>
           </div>
+        </div>
         </div>
       ))}
     </div>

@@ -37,6 +37,17 @@ function Four() {
   const [filteredarr1, setArray1] = useState([]);
   const [filteredarr2, setArray2] = useState([]);
   const [result, setResult] = useState([]);
+
+//test arrays
+  const handleTestButtonClick = () => {
+    const testArray1 = ["apple", null, "cherry"];
+    const testArray2 = ["orange", 1, undefined];
+
+    setArray1(testArray1);
+    setArray2(testArray2);
+  };
+
+
   // This function is called when the button is clicked
   const handleButtonClick = () => {
     const UniStrings = [];
@@ -46,6 +57,7 @@ function Four() {
       if (isNaN(string) && !filteredarr2.includes(string) && !UniStrings.includes(string)) {
         UniStrings.push(string);
       }
+
     });
 //same but with filteredarr2
     filteredarr2.forEach((string) => {
@@ -60,16 +72,28 @@ function Four() {
 
   return (
     <div
-    className='br4 code' style={{
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "40vh",
+    }}>
+   <div
+    className='br4' style={{
       border: "1px solid white",
       padding: "10px",
-      marginTop: "50px",
+      marginTop: "30px",
+      marginLeft: "200px",
+      marginRight: "200px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      width: "30%",
     }}>
       <div>
-        <label className="white">Array 1:</label>
+        <h1 className="code">DNArrays</h1>
+        <p className="code">it combine two arrays into one, just like DNA</p>
+        <label className="white code">Array 1:</label>
         <input
           type="text"
           value={filteredarr1}
@@ -77,18 +101,20 @@ function Four() {
         />
       </div>
       <div>
-        <label className="white">Array 2:</label>
+        <label className="white code">Array 2:</label>
         <input
           type="text"
           value={filteredarr2}
           onChange={(e) => setArray2(e.target.value.split(","))}
         />
       </div>
-      <button className="ma btn btn-primary" onClick={handleButtonClick}>Submit</button>
+      <button className="ma btn btn-primary code" onClick={handleButtonClick}>Submit</button>
+      <button className="ma btn btn-primary code ma2" onClick={handleTestButtonClick}>Test</button>
       <div>
-        <label className="white">Result:</label>
+        <label className="white code">Result:</label>
         <p>{result.join(", ")}</p>
       </div>
+    </div>
     </div>
   );
 }
