@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
-
+import AnagramChecker from './pages/AnagramChecker';
+import ArrayOrder from './pages/ArrayOrder';
+import Name from './pages/Name';
+import Home from './pages/Home';
+import Four from './pages/fourthFunction';
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const handleButtonClick = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<div>
+      <nav>
+        <button onClick={() => handleButtonClick('/')}>Home</button>
+        <button onClick={() => handleButtonClick('one')}>First Question</button>
+        <button onClick={() => handleButtonClick('two')}>Second Question</button>
+        <button onClick={() => handleButtonClick('three')}>Third Question</button>
+        <button onClick={() => handleButtonClick('four')}>Fourth Question</button>
+        <button onClick={() => handleButtonClick('five')}>Fifth Question</button>
+      </nav>
+      <div className='Pages'>
+        {currentPage === '/' && <Home/> }
+        {currentPage === 'one' && <ArrayOrder/>}
+        {currentPage === 'two' && <AnagramChecker/>}
+        {currentPage === 'three' && <Name/>}
+        {currentPage === 'four' && <Four/>}
+        {currentPage === 'five' && <h1>Five</h1>}
+      </div>
+</div>
   );
 }
 
