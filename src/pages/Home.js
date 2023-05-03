@@ -21,8 +21,8 @@ return(
     alignItems: "center",
     width: "auto",
   }}>
-        <h1>Hi! This is a website for demonstration</h1>
-        <p>Feel free to test the applications</p>
+        <h1 className="white code">Hi! This is a website for demonstration</h1>
+        <p className="white code">Feel free to test the applications</p>
     </div>
     </div>
 )
