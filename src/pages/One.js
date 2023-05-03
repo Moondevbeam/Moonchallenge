@@ -1,62 +1,65 @@
 import React, { useState } from "react";
 
 function One() {
+  // Define state variables for the array of strings and the input text
   const [string, setString] = useState([]);
-  const [inputText, setInputText] = useState("");
-  const handleAddString = () => {
+// Handler function for adding a new string to the array and sorting it
+  const handleAddString = (inputText) => {
     if (inputText.trim() !== "") {
-      setString([...string, inputText.trim()]);
-      setInputText("");
+      setString([...string, inputText.trim()].sort());         
     }
   };
-
-  const handleSort = () => {
-    const sorted = [...string].sort();
-    setString(sorted);
+//Handler function that receives the key command enter and run the function
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleAddString(e.target.value);
+      e.target.value = "";
+    }
   };
 
   return (
     <div
-    className="phone"
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "70vh",
-    }}>
-   <div
-    className='br4' style={{
-      border: "1px solid white",
-      padding: "10px",
-      marginTop: "50px",
-      marginLeft: "20%",
-      marginRight: "20%",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      width: "auto",
-    }}>
-      <h1 className="white code">Array Order</h1>
-      <p className="white code">This will alphabetical order one array</p>
-    <input
-        type="text"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
-            handleAddString();
-          }
+      className="phone"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "70vh",
+      }}
+    >
+      <div
+        className="br4"
+        style={{
+          border: "1px solid white",
+          padding: "10px",
+          marginTop: "50px",
+          marginLeft: "20%",
+          marginRight: "20%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "auto",
         }}
-      />
-      <button class="btn btn-primary code" onClick={handleSort}>Submit</button>
-      {string.map((item, index) => (
-        <div className="white code" key={index} style={{ margin: "5px" }}>
-          {item}
-        </div>
-      ))}
-    </div>   
+      > 
+        <h1 className="white code">Array Order</h1>
+        <p className="white code">This will alphabetical order one array</p>
+        <input //Input element
+          type="text"
+          onKeyDown={handleKeyDown}
+          placeholder="Type a string and press enter"
+        />
+        {string.map((item, index) => ( //Display the array of strings
+          <div
+            className="white code"
+            key={index}
+            style={{ margin: "5px" }}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
+}
 
-      }
 export default One;
