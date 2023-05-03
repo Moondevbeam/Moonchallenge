@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// eslint-disable-next-line
 import data from '../data/data.json'
 
 function Five() {
