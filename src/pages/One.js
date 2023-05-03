@@ -50,7 +50,7 @@ function One() {
       />
       <button class="btn btn-primary code" onClick={handleSort}>Submit</button>
       {string.map((item, index) => (
-        <div key={index} style={{ margin: "5px" }}>
+        <div className="white code" key={index} style={{ margin: "5px" }}>
           {item}
         </div>
       ))}
