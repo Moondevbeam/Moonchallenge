@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ArrayOrder() {
+function One() {
   const [string, setString] = useState([]);
   const [inputText, setInputText] = useState("");
   const handleAddString = () => {
@@ -17,15 +17,14 @@ function ArrayOrder() {
 
   return (
     <div
-      style={{
-        border: "1px solid black",
-        padding: "10px",
-        margin: "10px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
+    className='br4' style={{
+      border: "1px solid white",
+      padding: "10px",
+      marginTop: "50px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    }}>
       <h1>Array Order</h1>
     <input
         type="text"
@@ -37,7 +36,7 @@ function ArrayOrder() {
           }
         }}
       />
-      <button onClick={handleSort}>Ordina stringhe</button>
+      <button class="btn btn-primary" onClick={handleSort}>Submit</button>
       {string.map((item, index) => (
         <div key={index} style={{ margin: "5px" }}>
           {item}
@@ -48,4 +47,4 @@ function ArrayOrder() {
 }
 
 
-export default ArrayOrder;
+export default One;

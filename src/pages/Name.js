@@ -101,20 +101,21 @@ function Name() {
 
  // Render the form and the generated pairs
   return (
-    <div style={{
-      border: "1px solid black",
+    <div
+    className='br4' style={{
+      border: "1px solid white",
       padding: "10px",
-      margin: "10px",
+      marginTop: "50px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
     }}>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className='white'>
           Enter names separated by commas:
           <input type="text" onChange={handleChange} />
         </label>
-        <button type="submit">Pair Names</button>
+        <button style={{marginLeft:10}} type="submit" class="btn btn-primary">Pair Names</button>
       </form>
       {pairs.length > 0 &&
         <ul>

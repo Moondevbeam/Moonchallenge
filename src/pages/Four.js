@@ -33,7 +33,7 @@
 
 import React, { useState } from "react";
 
-function StringArr() {
+function Four() {
   const [filteredarr1, setArray1] = useState([]);
   const [filteredarr2, setArray2] = useState([]);
   const [result, setResult] = useState([]);
@@ -59,9 +59,17 @@ function StringArr() {
   };
 
   return (
-    <div>
+    <div
+    className='br4 code' style={{
+      border: "1px solid white",
+      padding: "10px",
+      marginTop: "50px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    }}>
       <div>
-        <label>Array 1:</label>
+        <label className="white">Array 1:</label>
         <input
           type="text"
           value={filteredarr1}
@@ -69,20 +77,20 @@ function StringArr() {
         />
       </div>
       <div>
-        <label>Array 2:</label>
+        <label className="white">Array 2:</label>
         <input
           type="text"
           value={filteredarr2}
           onChange={(e) => setArray2(e.target.value.split(","))}
         />
       </div>
-      <button onClick={handleButtonClick}>Submit</button>
+      <button className="ma btn btn-primary" onClick={handleButtonClick}>Submit</button>
       <div>
-        <label>Result:</label>
+        <label className="white">Result:</label>
         <p>{result.join(", ")}</p>
       </div>
     </div>
   );
 }
 
-export default StringArr;
+export default Four;

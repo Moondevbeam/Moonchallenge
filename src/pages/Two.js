@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AnagramChecker() {
+function Two() {
   const [string1, setString1] = useState('');
   const [string2, setString2] = useState('');
   const [areAnagrams, setAreAnagrams] = useState(false);
@@ -18,36 +18,39 @@ function AnagramChecker() {
   }
 
   return (
-    <div style={{
-      border: "1px solid black",
+    <div
+    className='br4' style={{
+      border: "1px solid white",
       padding: "10px",
-      margin: "10px",
+      marginTop: "50px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
     }}>
       <h1>Anagram Checker</h1>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className='white'>
           Word 1:
           <input type="text" value={string1} onChange={(e) => setString1(e.target.value)} />
         </label>
         <br />
-        <label>
+        <label className='white'>
           Word 2:
           <input type="text" value={string2} onChange={(e) => setString2(e.target.value)} />
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
       </form>
+      <div className='pa3 code'>
       {areAnagrams ? (
         <p>"{string1}" and "{string2}" are anagrams.</p>
       ) : (
         <p>"{string1}" and "{string2}" are NOT anagrams.</p>
       )}
+      </div>
     </div>
   );
 }
 
-export default AnagramChecker;
+export default Two;
 
