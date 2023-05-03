@@ -60,8 +60,8 @@ function Five() {
     <div className=" tc five code">
       <h1>Contact List</h1>
       <input
-      style={{width:"50%",
-    marginLeft:"200px"}}
+      className="phone"
+      style={{width:"50%"}}
         type="text"
         value={search}
         onChange={handleSearch}
@@ -86,10 +86,11 @@ function Five() {
           justifyContent: "center",
           alignItems: "center",}}>
         <div
+        className="phone contact-card"
         style={{
-            width: "30%",}} 
+            width: "50%",}} 
         key={contact.id || index} 
-        className="contact-card">
+        >
           <img
             src={contact.image}
             alt={`${contact.first_name} ${contact.last_name}`}

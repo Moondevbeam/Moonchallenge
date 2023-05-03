@@ -35,7 +35,7 @@ function Two() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '30vh',
+        height: '70vh',
       }}
     >
       <div
@@ -44,12 +44,12 @@ function Two() {
           border: '1px solid white',
           padding: '10px',
           marginTop: '50px',
-          marginLeft: '200px',
-          marginRight: '200px',
+          marginLeft: '20%',
+          marginRight: '20%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          width: '30%',
+          width: 'auto',
         }}
       >
         <h1 className='code white'>Anagram Exercise</h1>

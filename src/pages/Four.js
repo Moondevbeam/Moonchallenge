@@ -76,19 +76,19 @@ function Four() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      height: "40vh",
+      height: "70vh",
     }}>
    <div
     className='br4' style={{
       border: "1px solid white",
       padding: "10px",
       marginTop: "30px",
-      marginLeft: "200px",
-      marginRight: "200px",
+      marginLeft: "20%",
+      marginRight: "20%",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      width: "30%",
+      width: "auto",
     }}>
       <div>
         <h1 className="code">DNArrays</h1>

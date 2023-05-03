@@ -106,19 +106,19 @@ function Name() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      height: "20vh",
+      height: "70vh",
     }}>
    <div
     className='br4' style={{
       border: "1px solid white",
       padding: "10px",
       marginTop: "50px",
-      marginLeft: "200px",
-      marginRight: "200px",
+      marginLeft: "20%",
+      marginRight: "20%",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      width: "30%",
+      width: "auto",
     }}>
       <h1 className='code'>Name Pairs</h1>
       <p className='code'>Write some names in the textbox, follow the instruction below and it will make randomized name pairs</p>

@@ -17,23 +17,24 @@ function One() {
 
   return (
     <div
+    className="phone"
     style={{
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      height: "30vh",
+      height: "70vh",
     }}>
    <div
     className='br4' style={{
       border: "1px solid white",
       padding: "10px",
       marginTop: "50px",
-      marginLeft: "200px",
-      marginRight: "200px",
+      marginLeft: "20%",
+      marginRight: "20%",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      width: "30%",
+      width: "auto",
     }}>
       <h1 className="white code">Array Order</h1>
       <p className="white code">This will alphabetical order one array</p>
