@@ -92,7 +92,7 @@ function Name() {
         <form onSubmit={handleSubmit}>
           <label className="white code">
             Enter names separated by commas:
-            <input type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
+            <input placeholder='foo, hello, moonbeam, apples, ecc ' type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
           </label>
         </form>
         <button
