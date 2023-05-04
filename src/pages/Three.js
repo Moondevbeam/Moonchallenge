@@ -84,10 +84,6 @@ function Name() {
       <input placeholder='foo, hello, moonbeam, apples, ecc ' type="text" onChange={handleChange} />
     </label>
   </form>
-  <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
-          <button className="ma1 btn btn-primary code" onClick={handleSubmit}>Test Your Values</button>
-          <button style={{ marginLeft: 10 }} className="ma1 btn btn-primary code" onClick={handleTest}>Test Default Values</button>
-  </div>
         {pairs.length > 0 && (
           <ul>
             {pairs.map((pair, index) => (
@@ -97,6 +93,10 @@ function Name() {
             ))}
           </ul>
         )}
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+              <button className="ma1 btn btn-primary code" onClick={handleSubmit}>Test Your Values</button>
+              <button style={{ marginLeft: 10 }} className="ma1 btn btn-primary code" onClick={handleTest}>Test Default Values</button>
+        </div>
       </div>
     </div>
   );
