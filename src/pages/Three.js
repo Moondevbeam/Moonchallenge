@@ -88,7 +88,7 @@ function Name() {
         <p className="code">React component that will pair randomically two names in an array.</p>
         <form onSubmit={handleSubmit}>
           <label className="white code">
-            Enter names separated by commas:
+            Enter names separated by commas and then press Enter:
             <input placeholder='foo, hello, moonbeam, apples, ecc ' type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
           </label>
         </form>

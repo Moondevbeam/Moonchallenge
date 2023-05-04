@@ -4,11 +4,18 @@ function One() {
   // Define state variables for the array of strings and the input text
   const [string, setString] = useState([]);
 // Handler function for adding a new string to the array and sorting it
-  const handleAddString = (inputText) => {
-    if (inputText.trim() !== "") {
-      setString([...string, inputText.trim()].sort());         
+const handleAddString = (inputText) => {
+  if (inputText.trim() !== "") {
+    // Verifica se l'elemento esiste già nell'array
+    const isDuplicate = string.some(item => item === inputText.trim());
+
+    // Se l'elemento non è un duplicato, aggiungilo all'array e ordina
+    if (!isDuplicate) {
+      setString([...string, inputText.trim()].sort());
     }
-  };
+  }
+};
+
 //Handler function that receives the key command enter and run the function
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
