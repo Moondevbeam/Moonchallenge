@@ -27,3 +27,15 @@
 .App-link {
   color: #61dafb;
 }
+
+.small {
+  padding: 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .small {
+    padding: 6px;
+    font-size: 12px;
+  }
+}

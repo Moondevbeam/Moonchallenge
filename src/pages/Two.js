@@ -7,6 +7,11 @@ function Two() {
   const [string2, setString2] = useState('');
   const [areAnagrams, setAreAnagrams] = useState(false);
 
+  const handleAddPredefinedValues = () => {
+    setString1('tiziano');
+    setString2('notizia');
+  };
+
   const checkAnagrams = () => {
     if (!string1 || !string2) {
       return false; // If you give an Empty value it will return false
@@ -91,6 +96,9 @@ function Two() {
               "{string1}" and "{string2}" are NOT anagrams.
             </p>
           )}
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+              <button className="btn btn-primary small" onClick={handleAddPredefinedValues}>Add Predefined Values</button>
+          </div>
         </div>
         </div>
       </div>

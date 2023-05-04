@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 
 function Three(arr) {
   const pairs = [];
-  const usedIndices = new Set();
+  const availableIndices = [...Array(arr.length).keys()];
 
-  while (usedIndices.size < arr.length) {
-    const index1 = getRandomIndex(arr.length);
-    if (usedIndices.has(index1)) continue;
-    usedIndices.add(index1);
+  while (availableIndices.length > 1) {
+    const index1 = getRandomIndex(availableIndices.length);
+    const element1 = arr[availableIndices[index1]];
+    availableIndices.splice(index1, 1);
 
-    const index2 = getRandomIndex(arr.length);
-    if (usedIndices.has(index2)) continue;
-    usedIndices.add(index2);
+    const index2 = getRandomIndex(availableIndices.length);
+    const element2 = arr[availableIndices[index2]];
+    availableIndices.splice(index2, 1);
 
-    pairs.push([arr[index1], arr[index2]]);
+    pairs.push([element1, element2]);
   }
 
-  if (arr.length % 2 !== 0) {
-    pairs.push([arr[getRandomIndex(arr.length)]]);
+  if (availableIndices.length === 1) {
+    pairs.push([arr[availableIndices[0]]]);
   }
 
   return pairs;
@@ -46,18 +46,10 @@ function Name() {
     setNames(event.target.value.split(',').map(name => name.trim()));
   };
 
-  // Function called when the Enter key is pressed in the input field
-  const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      setPairs(Three(names));
-    }
-  };
-
   // Function called when the Test button is clicked
   const handleTest = () => {
-    setNames(['Alice', 'Bob', 'Charlie', 'Dave', 'Eve']);
-    setPairs(Three(['Alice', 'Bob', 'Charlie', 'Dave', 'Eve']));
+    setNames(['Foo', 'Hello', 'Moonbeam', 'Apples', 'Eve']);
+    setPairs(Three(['Foo', 'Hello', 'Moonbeam', 'Apples', 'Eve']));
   };
 
   // Render the form and the generated pairs
@@ -87,18 +79,15 @@ function Name() {
         <h1 className="code">Name Pairs</h1>
         <p className="code">React component that will pair randomically two names in an array.</p>
         <form onSubmit={handleSubmit}>
-          <label className="white code">
-            Enter names separated by commas and then press Enter:
-            <input placeholder='foo, hello, moonbeam, apples, ecc ' type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
-          </label>
-        </form>
-        <button
-          style={{ marginLeft: 10 }}
-          className="ma1 btn btn-primary code"
-          onClick={handleTest}
-        >
-          Test
-        </button>
+    <label className="white code">
+      Enter names separated by commas and then press Enter:
+      <input placeholder='foo, hello, moonbeam, apples, ecc ' type="text" onChange={handleChange} />
+    </label>
+  </form>
+  <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+          <button className="ma1 btn btn-primary code" onClick={handleSubmit}>Test Your Values</button>
+          <button style={{ marginLeft: 10 }} className="ma1 btn btn-primary code" onClick={handleTest}>Test Default Values</button>
+  </div>
         {pairs.length > 0 && (
           <ul>
             {pairs.map((pair, index) => (

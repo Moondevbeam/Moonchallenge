@@ -24,6 +24,29 @@ const handleAddString = (inputText) => {
     }
   };
 
+  // Handler function for the button click
+  const handleClick = () => {
+    const inputElement = document.getElementById("input-text");
+    handleAddString(inputElement.value);
+    inputElement.value = "";
+  };
+
+  // Handler function for adding predefined values
+  const handleAddPredefinedValues = () => {
+    const predefinedValues = [
+      "apple", "banana", "orange", "orange", "banana", "hello", "Moonbeam",
+    ];
+    const newStringArray = removeDuplicates([...string, ...predefinedValues]);
+    newStringArray.sort((a, b) => a.localeCompare(b)); //localCompare compare strings and will alphabetical order them
+    setString(newStringArray);
+  };
+// this will remove duplicates for the predefined values
+  const removeDuplicates = (arr) => {
+    return arr.filter((value, index, self) => {
+      return self.indexOf(value) === index;
+    });
+  };
+
   return (
     <div
       className="phone"
@@ -50,11 +73,16 @@ const handleAddString = (inputText) => {
       > 
         <h1 className="white code">Array Order</h1>
         <p className="white code">React component that sorts and removes duplicates from an array of strings.</p>
-        <input //Input element
+        <input
+          id="input-text" //Input element
           type="text"
           onKeyDown={handleKeyDown}
-          placeholder="Type a string and press enter"
+          placeholder="apple, banana, orange, orange, banana, hello, Moonbeam"
         />
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+          <button style={{ marginRight: "40px" }} className="btn btn-primary small" onClick={handleClick}>Test Your Values</button>
+        <button className="btn btn-primary" onClick={handleAddPredefinedValues}>Test Default Values</button>
+        </div>
         {string.map((item, index) => ( //Display the array of strings
           <div
             className="white code"

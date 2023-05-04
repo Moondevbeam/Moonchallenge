@@ -1,36 +1,3 @@
-// fourthFunction
-//This is only Javascript, React Component is below
-// function Four(array1, array2) {
-//     const arr = [];
-  
-//     //Array.filter string value
-//     const filteredArr1 = array1.filter(x => typeof x === 'string');
-//     const filteredArr2 = array2.filter(x => typeof x === 'string');
-//  //ForEach Loop checking values in the filtered array 
-//     filteredArr1.forEach(str => {
-//       if (!filteredArr2.includes(str)) {
-//         arr.push(str);
-//       }
-//     });
-//     filteredArr2.forEach(str => {
-//       if (!filteredArr1.includes(str)) {
-//         arr.push(str);
-//       }
-//     });
-  
-//     return arr;
-//   }
-  
-//  //test array
-//   const array1 = ['Wow', 2, 'Hello', undefined, 0, 'Jack'];
-//   const array2 = ['one', 3, 'Ann', 'Michael', 1000, null, ];
-  
-
-//   //function call 
-//   const arr = Four(array1, array2);
-//   console.log(arr);
-
-
 import React, { useState, useEffect } from "react";
 
 function Four() {
@@ -76,7 +43,7 @@ function Four() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "70vh",
+        height: "80vh",
       }}
     >
       <div
@@ -109,11 +76,11 @@ function Four() {
           value={filteredarr2}
           onChange={(e) => setArray2(e.target.value.split(","))}
         />
-        <button className="ma btn btn-primary code ma2" onClick={handleTestButtonClick}>
-          Test
-        </button>
         <label className="white code">Result:</label>
         <p>{result.join(", ")}</p>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+        <button className="ma btn btn-primary code ma2" onClick={handleTestButtonClick}>Test Predefined Values</button>
+        </div>
       </div>
     </div>
   );
