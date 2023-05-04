@@ -85,10 +85,7 @@ function Name() {
         }}
       >
         <h1 className="code">Name Pairs</h1>
-        <p className="code">
-          Write some names in the textbox, follow the instruction below and it
-          will make randomized name pairs
-        </p>
+        <p className="code">React component that will pair randomically two names in an array.</p>
         <form onSubmit={handleSubmit}>
           <label className="white code">
             Enter names separated by commas:

@@ -94,7 +94,7 @@ function Four() {
         }}
       >
         <h1 className="code">DNArrays</h1>
-        <p className="code">it combine two arrays into one, just like DNA</p>
+        <p className="code">React component that will combine the only strings placed in to two arrays into one</p>
         <label className="white code">Array 1:</label>
         <input
           type="text"

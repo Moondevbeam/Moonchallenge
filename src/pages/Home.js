@@ -10,7 +10,7 @@ return(
     height: "70vh",
   }}>
  <div
-  className='br4' style={{
+  className='br4 code white' style={{
     border: "1px solid white",
     padding: "10px",
     marginTop: "50px",
@@ -21,8 +21,8 @@ return(
     alignItems: "center",
     width: "auto",
   }}>
-        <h1 className="white code">Hi! This is a website for demonstration</h1>
-        <p className="white code">Feel free to test the applications</p>
+        <h1>Hi! This is a website for demonstration</h1>
+        <p>Feel free to test the applications</p>
     </div>
     </div>
 )

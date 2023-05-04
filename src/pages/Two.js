@@ -53,6 +53,7 @@ function Two() {
         }}
       >
         <h1 className='code white'>Anagram Exercise</h1>
+        <p>React component that will find out if two words are anagrams or not.</p>
         <form>
           <label className='white code'>
             Name 1:

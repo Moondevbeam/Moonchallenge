@@ -59,6 +59,7 @@ function Five() {
   return (
     <div className=" tc five code">
       <h1>Contact List</h1>
+      <p>React component with a contact list, favourite marker and searchbox for contacts.</p>
       <input
       className="phone"
       style={{width:"50%"}}

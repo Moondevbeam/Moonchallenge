@@ -42,7 +42,7 @@ function One() {
         }}
       > 
         <h1 className="white code">Array Order</h1>
-        <p className="white code">This will alphabetical order one array</p>
+        <p className="white code">React component that sorts and removes duplicates from an array of strings.</p>
         <input //Input element
           type="text"
           onKeyDown={handleKeyDown}
