@@ -57,6 +57,7 @@ function Two() {
           <label className='white code'>
             Name 1:
             <input
+              placeholder='tiziano'
               type='text'
               value={string1}
               // "e" stands for event, it rappresent the current input value
@@ -69,6 +70,7 @@ function Two() {
           <label className='white code'>
             Name 2:
             <input
+            placeholder='notizia'
               type='text'
               value={string2}
               onChange={(e) => {
