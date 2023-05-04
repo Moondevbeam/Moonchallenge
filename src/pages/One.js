@@ -6,10 +6,10 @@ function One() {
 // Handler function for adding a new string to the array and sorting it
 const handleAddString = (inputText) => {
   if (inputText.trim() !== "") {
-    // Verifica se l'elemento esiste già nell'array
+    // Check if element is duplicated
     const isDuplicate = string.some(item => item === inputText.trim());
 
-    // Se l'elemento non è un duplicato, aggiungilo all'array e ordina
+    // If element is NOT duplicated add in the array
     if (!isDuplicate) {
       setString([...string, inputText.trim()].sort());
     }
