@@ -97,12 +97,14 @@ function Four() {
         <p className="code">React component that will combine the only strings placed in to two arrays into one</p>
         <label className="white code">Array 1:</label>
         <input
+          placeholder="hi, 2, moonbeam"
           type="text"
           value={filteredarr1}
           onChange={(e) => setArray1(e.target.value.split(","))}
         />
         <label className="white code">Array 2:</label>
         <input
+          placeholder="foo, 1, hello"
           type="text"
           value={filteredarr2}
           onChange={(e) => setArray2(e.target.value.split(","))}
